@@ -1,21 +1,11 @@
+/* App.css */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,48 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #f0f0f0; /* Light grey background */
+  color: black; /* Black text */
+  border: none; /* No borders */
+  cursor: pointer; /* Cursor indicates it's clickable */
+  text-align: left; /* Align text to the left */
+  border-radius: 5px; /* Rounded corners for the button */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for 3D effect */
+}
+
+button:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.radius-input {
+  margin: 20px;
+  text-align: center;
+}
+
+.radius-input label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  padding: 8px;
+  width: 200px; /* Fixed width for consistency */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Larger font size for readability */
+}
+
+input[type="number"]:focus {
+  border-color: #0066cc; /* Blue border on focus */
+  outline: none; /* Remove default focus outline */
 }
