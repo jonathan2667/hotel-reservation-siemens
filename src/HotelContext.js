@@ -1,30 +1,61 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import hotelData from './data/hotels.json';
 
 export const HotelContext = createContext();
 
 export const HotelProvider = ({ children }) => {
-    const [hotels, setHotels] = useState(hotelData);
+    const [hotels, setHotels] = useState(hotelData || []); 
     const [bookings, setBookings] = useState([]);
+    const [feedback, setFeedback] = useState([]);
 
-    const bookRoom = (roomNumber) => {
-        const newHotels = hotels.map(hotel => {
-            hotel.rooms = hotel.rooms.map(room => {
-                if (room.roomNumber === roomNumber) {
-                    if (room.isAvailable) {
-                        room.isAvailable = false;  // Update availability
-                        setBookings([...bookings, room]);  // Add to bookings
+    const addFeedback = (roomNumber, userFeedback) => {
+        const newFeedback = {
+            roomNumber,
+            text: userFeedback
+        };
+        setFeedback(prevFeedback => [...prevFeedback, newFeedback]);
+    };
+
+    const bookRoom = (roomNumber, startDate, endDate) => {
+        let isAvailable = !bookings.some(booking =>
+            booking.roomNumber === roomNumber &&
+            ((startDate >= booking.startDate && startDate <= booking.endDate) ||
+             (endDate >= booking.startDate && endDate <= booking.endDate) ||
+             (startDate <= booking.startDate && endDate >= booking.endDate))
+        );
+
+        if (isAvailable) {
+            const updatedHotels = hotels.map(hotel => ({
+                ...hotel,
+                rooms: hotel.rooms.map(room => {
+                    if (room.roomNumber === roomNumber) {
+                        return { ...room, isAvailable: false };
                     }
-                }
-                return room;
-            });
-            return hotel;
-        });
-        setHotels(newHotels);
+                    return room;
+                })
+            }));
+            
+            const newBooking = {
+                roomNumber,
+                startDate,
+                endDate
+            };
+            
+            setHotels(updatedHotels);
+            setBookings(prevBookings => [...prevBookings, newBooking]);
+        } else {
+            alert("Room is not available for the selected dates.");
+        }
     };
 
     return (
-        <HotelContext.Provider value={{ hotels, bookRoom, bookings }}>
+        <HotelContext.Provider value={{
+            hotels,
+            bookings,
+            feedback,
+            addFeedback,
+            bookRoom
+        }}>
             {children}
         </HotelContext.Provider>
     );

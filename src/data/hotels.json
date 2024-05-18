@@ -5,24 +5,18 @@
         "latitude": 46.764654252624204,
         "longitude": 23.598674125224626,
         "rooms": [
-        {
-            "roomNumber": 210,
-            "type": 2,
-            "price": 200,
-            "isAvailable": true
-        },
-        {
-            "roomNumber": 125,
-            "type": 1,
-            "price": 350,
-            "isAvailable": true
-        },
-        {
-            "roomNumber": 87,
-            "type": 1,
-            "price": 300,
-            "isAvailable": false
-        }
+            {
+                "roomNumber": 210,
+                "type": 2,
+                "price": 200,
+                "isAvailable": false
+            },
+            {
+                "roomNumber": 125,
+                "type": 1,
+                "price": 350,
+                "isAvailable": true
+            }
         ]
     },
     {
@@ -31,39 +25,33 @@
         "latitude": 46.7522792440665,
         "longitude": 23.605990381045697,
         "rooms": [
-        {
-            "roomNumber": 41,
-            "type": 3,
-            "price": 240,
-            "isAvailable": true
-        }
+            {
+                "roomNumber": 41,
+                "type": 3,
+                "price": 240,
+                "isAvailable": true
+            }
         ]
     },
     {
-    "id": 3,
-    "name": "Hampton by Hilton",
-    "latitude": 46.77539900854998,
-    "longitude": 23.60182699638966,
-    "rooms": [
-        {
-            "roomNumber": 32,
-            "type": 2,
-            "price": 410,
-            "isAvailable": false
-        },
-        {
-            "roomNumber": 21,
-            "type": 2,
-            "price": 350,
-            "isAvailable": true
-        },
-        {
-            "roomNumber": 64,
-            "type": 3,
-            "price": 300,
-            "isAvailable": true
-        }
-    ]
+        "id": 3,
+        "name": "Hampton by Hilton",
+        "latitude": 46.77539900854998,
+        "longitude": 23.60182699638966,
+        "rooms": [
+            {
+                "roomNumber": 32,
+                "type": 2,
+                "price": 410,
+                "isAvailable": false
+            },
+            {
+                "roomNumber": 64,
+                "type": 3,
+                "price": 300,
+                "isAvailable": true
+            }
+        ]
     },
     {
         "id": 4,
@@ -71,12 +59,6 @@
         "latitude": 40.7644,
         "longitude": -73.9748,
         "rooms": [
-            {
-                "roomNumber": 101,
-                "type": 4,
-                "price": 500,
-                "isAvailable": true
-            },
             {
                 "roomNumber": 102,
                 "type": 1,
@@ -90,7 +72,65 @@
                 "isAvailable": false
             }
         ]
+    },
+    {
+        "id": 5,
+        "name": "Hotel Ritz Paris",
+        "latitude": 48.8675,
+        "longitude": 2.3287,
+        "rooms": [
+            {
+                "roomNumber": 202,
+                "type": 4,
+                "price": 1100,
+                "isAvailable": false
+            },
+            {
+                "roomNumber": 203,
+                "type": 1,
+                "price": 850,
+                "isAvailable": true
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Savoy Hotel London",
+        "latitude": 51.5107,
+        "longitude": -0.1204,
+        "rooms": [
+            {
+                "roomNumber": 150,
+                "type": 3,
+                "price": 750,
+                "isAvailable": true
+            },
+            {
+                "roomNumber": 151,
+                "type": 2,
+                "price": 650,
+                "isAvailable": false
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Adlon Kempinski Berlin",
+        "latitude": 52.5163,
+        "longitude": 13.3777,
+        "rooms": [
+            {
+                "roomNumber": 101,
+                "type": 4,
+                "price": 900,
+                "isAvailable": true
+            },
+            {
+                "roomNumber": 102,
+                "type": 3,
+                "price": 700,
+                "isAvailable": true
+            }
+        ]
     }
-    
-    
 ]
